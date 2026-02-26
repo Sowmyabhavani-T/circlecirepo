@@ -35,13 +35,13 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:9ajH+lqwmRGo1IWNb2wwtf2IDAByxh1TxNjmmINm6DM"
+            - "SHA256:Tn40Mn2dj1zRW1XfBLPzl+EtIxRsQKLdA4EDuTCNosw"
       - run:
           name: Deploy to EC2
           command: |
             ssh -o StrictHostKeyChecking=no ec2-user@$EC2_IP "
               if [ ! -d /home/ec2-user/blog-app ]; then
-                git clone https://github.com/MaheshKumarBisai/Blog-app.git /home/ec2-user/blog-app
+                git clone https://github.com/Sowmyabhavani-T/circlecirepo.git /home/ec2-user/blog-app
               fi &&
               cd /home/ec2-user/blog-app &&
               git pull origin main &&
